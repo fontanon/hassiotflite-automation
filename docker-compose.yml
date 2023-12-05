@@ -1,0 +1,17 @@
+version: '3'
+services:
+  hassiotflite:
+    container_name: hassiotflite
+    build:
+      context: .
+      dockerfile: Dockerfile # Replace with Dockerfile.arm64 for raspberry-pi4
+    image: hassiotflite:latest
+    restart: unless-stopped
+    env_file: .env
+    environment: # Do your edit on .env file
+      TF_LABELS: ${TF_LABELS}
+      TF_LABEL_INVOKE: ${TF_LABEL_INVOKE}
+      HASSIO_WEBHOOKURL: ${HASSIO_WEBHOOKURL}
+    volumes:
+      - ./model:/opt/model # Store the model.tflite fine here.
+      - ./watchdir:/opt/watchdir # Replace with yours, ensure directory exists even if empty

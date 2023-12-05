@@ -1,0 +1,7 @@
+FROM arm64v8/python:3.9.12
+
+WORKDIR /opt/
+COPY requirements.txt hassiotflite.py ./
+RUN pip install tflite-runtime
+RUN pip install -r requirements.txt
+CMD ["python", "./hassiotflite.py"]
