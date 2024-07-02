@@ -1,4 +1,8 @@
-FROM arm64v8/python:3.9.12
+ARG BUILD_FROM
+FROM $BUILD_FROM
+
+RUN apk add --no-cache -U python3 python3-dev gcc linux-headers musl-dev tcpdump \
+    && pip3 install --no-cache --upgrade pip
 
 WORKDIR /opt/
 COPY requirements.txt hassiotflite.py ./
