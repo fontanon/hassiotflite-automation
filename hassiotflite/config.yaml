@@ -1,0 +1,19 @@
+name: "Toldo Terraza"
+description: "Mira la última foto de la terraza a ver si el toldo está echado o no para visar por viento"
+version: "dev"
+slug: "toldo_terraza"
+init: true
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+map:
+  - config
+  - addon_configs
+options:
+  - media_folder: "camterraza"
+  - tf_labels: "con,sin"
+  - tf_label_invoke: "con"
+  - hassio_webhookurl: "replaceme with another webhook automation full URL"
