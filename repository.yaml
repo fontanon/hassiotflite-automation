@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: hassiotflite-automation
+url: 'https://github.com/fontanon/hassiotflite-automation'
+maintainer: J. Félix Ontañón <felixonta@gmail.com>
